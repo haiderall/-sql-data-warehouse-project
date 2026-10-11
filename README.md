@@ -50,8 +50,7 @@ Develop SQL-based analytics to deliver detailed insights into:
 ## ☕ Stay Connected
 
 Let's stay in touch!
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/baraa-khatib-salkini)
+(https://linkedin.com/in/)
 
 ## 🛡️ License
 
