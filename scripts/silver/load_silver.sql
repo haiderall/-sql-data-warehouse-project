@@ -1,31 +1,16 @@
--- check for null or duplicate in pk
-use `DataWareHouse`;
+/*
+===============================================================================
+Stored Procedure: Load Silver Layer (Bronze -> Silver)
+===============================================================================
+Script Purpose:
+    This stored procedure performs the ETL (Extract, Transform, Load) process to 
+    populate the 'silver' schema tables from the 'bronze' schema.
+	Actions Performed:
+		- Truncates Silver tables.
+		- Inserts transformed and cleansed data from Bronze into Silver tables.
+*/
 
-select prd_id,
-count(*)
-from silver_crm_sales_det
-group by prd_id
-having count(*) > 1 or prd_id is null;
-
--- check for unwanted spaces (trim)
-select prd_nm
-from silver_crm_prd_info
-where prd_nm != trim(prd_nm);
-
--- negatives
-select prd_cost
-from silver_crm_prd_info
-where prd_cost < 0 or prd_cost is null;
-
--- data standardization & consistency
-select distinct prd_line
-from silver_crm_prd_info;
-
--- check for invalid date
--- end date should be after start date
-select *
-from silver_crm_prd_info
-where prd_end_dt < prd_start_dt;
+use DataWareHouse;
 
 DROP PROCEDURE IF EXISTS load_silver_crm_cust_info;  -- superseded
 DROP PROCEDURE IF EXISTS load_silver;
