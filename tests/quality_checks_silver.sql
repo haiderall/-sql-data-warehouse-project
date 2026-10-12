@@ -8,7 +8,6 @@ Script Purpose:
     - Null or duplicate primary keys.
     - Unwanted spaces in string fields.
     - Data standardization and consistency.
-    - Invalid date ranges and orders.
     - Data consistency between related fields.
 
 Usage Notes:
