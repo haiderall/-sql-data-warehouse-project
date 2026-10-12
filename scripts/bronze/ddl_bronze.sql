@@ -67,6 +67,17 @@ SUBCAT varchar(50),
 MAINTENANCE varchar(50)
 );
 
+/*
+===============================================================================
+Load Bronze Layer (Source -> Bronze)
+===============================================================================
+Script Purpose:
+    Loads data into the 'bronze' tables from external CSV files. 
+    It performs the following actions:
+    - Truncates the bronze tables before loading data.
+    - Uses the `BULK INSERT` command to load data from csv Files to bronze tables.
+*/
+
 -- SET GLOBAL local_infile = 1;
 
 SELECT 'Loading Bronze Layer' AS ' ';
